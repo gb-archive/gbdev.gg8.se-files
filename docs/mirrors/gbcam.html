@@ -1,0 +1,191 @@
+<html>
+<!-- Mirrored from gbdev.gg8.se/files/docs/mirrors/gbcam.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 09 Jun 2018 22:39:15 GMT -->
+<head>
+
+   <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+   <meta name="GENERATOR" content="Mozilla/4.05 [en] (Win95; I) [Netscape]">
+   <title>Inside Game Boy Camera</title>
+
+</head><body background="gbcam_files/Fibrtile.gif">
+<!-- following code added by server. PLEASE REMOVE -->
+<!-- preceding code added by server. PLEASE REMOVE -->
+
+<center><b><font color="#3333ff"><font size="+3">Inside Game Boy Camera</font></font></b></center>
+
+<center><i><font color="#ff0000"><font size="+2">It's a camera! It's a game!
+It's hackable! Hmmmm...</font></font></i></center>
+<img src="gbcam_files/OUTSIDE.jpg" border="0" height="456" width="315"><img src="gbcam_files/BACKSIDE.jpg" border="0" height="456" width="405">The
+Game Boy Camera is available right now for fifty bucks. It can take and
+store 30 black and white images, and has an impressive collection of fun
+image manipulation tools. Images can be flipped, mirrored, and stretched.
+You can draw on them, or stamp them with a wide variety of clip art and
+fonts. You can combine four images to make a wide (or tall) panorama. And
+you can set it up to do time lapse with interval adjustable from 1 second
+to 1 hour. You can combine images to make a montage or animation. You can
+add notation to each image. And you can put your face onto a game character
+in three included games. You can print out your creations using an accessory
+printer, or transfer them to another game boy (equipped with the camera)
+using a serial link cable. There's even a music editor which allows you
+to compose your own music. And all this is done the way Nintendo does things:
+it's fun and funky. Every screen has a different musical theme (you can
+choose from 30 different musical backgrounds to accompany you animation).
+And there are all kinds of weird graphics for each sub-menu.&nbsp;
+<hr width="100%">
+<center><font color="#3366ff"><font size="+3">Hackability?</font></font></center>
+Now that I've got the description of what it is out of the way, let's roll
+up our sleeves and see <i>what it could be</i>...
+<br>It can hold 30 pictures in battery backed ram. That implies at least
+64k bytes, but after a peek inside, it looks like it has 128k bytes!&nbsp;
+Hmmm... The impressive collection of image manipulation tools , along with
+fonts, clip art, and other images implies that there may be as much as
+1 M byte of rom. Each unit has a unique ID number accessible from a menu.
+The ROM is not programmable, so 
+the ID must be in battery-backed ram. With the camera disconnected from the
+board, the connector might be used for general I/O for data acqisition
+or control. Hmmmm...
+<br>The camera itself is in a rotatable spherical pod, about 1.25 inch
+in diameter. It contains a 16-pin sensor with a
+Mitsubishi logo, labeled 282 81DH. This part is not a CCD chip,
+but a new device from Mitsubishi, M64282FP, the "Artificial
+Retina".Not only can sense an image, but it can process it as well, 
+doing such things as edge detection. It connects to the board in the 
+cartridge with a 9-pin connector, and probably could be extended&nbsp; 
+for remote viewing. Hmmm...<p>
+Click here for specs on the <a href="http://www.lh.co.nz/hardware/retina/">
+artificial retina chip</a>
+, provided by <a href="mailto:benjamin@lh.co.nz"><i></i>Benjamin Green</a>.
+</p><p>&nbsp;
+The camera itself is quite sensitive and can create a good image 
+in&nbsp;low light. It can even detect infrared, and take a picture by 
+the (IR)light of a TV remote. Again, hmmm...
+<br>Even if we don't chop the thing up, it is still hackable, by figuring
+out the protocol for image transfer. Then you could upload images to be
+printed or put up on web pages, maybe even aimated GIFs! Once more, hmmm...
+</p><p>
+More info is available on transfering GB images via a cartridge reader on 
+
+<a href="http://home.hiwaay.net/~jfrohwei/gameboy/"> Jeff Frohwein's GameBoy Site</a>
+</p><p>
+Download GB camera images to your pc using a
+<a href="http://webspace.webring.com/people/tu/um_11206/gb2pp7.gif">Game Boy Link cable</a>
+and <a href="http://webspace.webring.com/people/tu/um_11206/gbcam2pc.zip">Pocket Printer Emulator</a>
+</p><p>
+
+
+</p><hr width="100%">
+<center><font color="#3366ff"><font size="+2">Here's a list of the major
+chips inside</font></font></center>
+&nbsp;
+<ul>
+<li>
+U1&nbsp;&nbsp;&nbsp; MAC-GBD&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+Nintendo&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+9807 SA&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+I/O, memory control?</li>
+
+<li>
+U2&nbsp;&nbsp;&nbsp; GBD-PCAX-0 
+F&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+M538011-E -08&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+8145507&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+1M
+ X 8 ROM</li>
+
+<li>
+U3&nbsp;&nbsp;&nbsp; 52CV1000SF85LL&nbsp;&nbsp;&nbsp; SHARP JAPAN&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+9805 5 0A&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+128K X 8 RAM</li>
+</ul>
+<img src="gbcam_files/INSIDE.jpg" border="0" height="480" width="300"><img src="gbcam_files/UNPLUGED.jpg" border="0" height="480" width="376">
+<center><img src="gbcam_files/LENS.jpg" border="0" height="243" width="167"><img src="gbcam_files/CCD.jpg" height="149" width="157"><img src="gbcam_files/BACKHEAD.jpg" height="165" width="187"></center>
+<p></p><hr>
+Another hackable, and inexpensive (under $50 refurbished) ccd imager is the
+<a href="http://www.connectix.com/html/quickcam.html">
+Connectix QuickCam</a>.
+It is a grayscale camera which connects
+to the pc through the printer port, and can be used for snapshots, 
+movies, and videoconferencing. It uses a Texas Instruments TC255 ccd 
+imager, and is documented on the web at numerous sites:<br>
+
+<a href="http://www.crynwr.com/qcpc/">
+QuickCam drivers</a><br>
+<a href="http://www.crynwr.com/qcpc/re.html">
+QuickCam internals</a><br>
+<a href="http://www.powerscourt.com/pbs/disassemble_quickcam.html">
+Inside the QuickCam</a><br>
+<a href="http://www.geocities.com/CapeCanaveral/Lab/4171/qc.html">
+Using QuickCam for astrophotography</a><p>
+
+What does this have to do with Game Boy Camera? Nothing. But I received a
+ number of inquiries about using the GB camera (or its sensor) for robot
+ vision or astrophotography. The QuickCam is just as cheap, already 
+interfaced to a parallel port, and documented. But we need to keep 
+digging and find out as much as we can about the GB Camera.  
+
+</p><hr>
+<center>
+Please <a href="mailto:corky@aspi.net">email</a>
+ me with questions, comments, or info.
+<br>
+<a target="_top" href="http://extreme-dm.com/s/?tag=gbcam">
+<img name="im" src="gbcam_files/a.gif" border="0" height="38" width="41"></a><script><!--
+an=navigator.appName;sr='http://extreme-dm.com/';c=24;srw="na";x=17;srb="na";d=document;r=41;function pr(n) {
+d.write("<img src=\""+sr+""+n+"\/?tag=gbcam&j=y&srw="+srw+"&srb="+srb+"&l="+escape(d.referrer)+"&rs="+r+"\" height=1 width=1>");}//-->
+</script><script language="javascript1.2"><!--
+s=screen;srw=s.width;an!="Netscape"?srb=s.colorDepth:srb=s.pixelDepth//-->
+</script><script><!--
+d.images?r=d.im.width:z=0;pr("z")//-->
+</script><img src="gbcam_files/a_002.gif" height="1" width="1"><noscript><img src=http://extreme-dm.com/z/?tag=gbcam&amp;j=n height=1 width=1></noscript>
+<center>
+
+<a href="http://webspace.webring.com/people/tu/um_11206/index.html"><img src="gbcam_files/home.gif" alt="Home" align="MIDDLE" border="0"></a>
+
+
+<!--MAIL-->
+<br>© 1998 <a href="mailto:corkymork@yahoo.com"><i>corkymork@yahoo.com</i></a><br>
+</center>
+
+<center>
+<p><table border="10" cellpadding="3" cellspacing="3" width="500"><tbody><tr><th><font size="2">
+<a href="http://www.geneticfantasia.com/html/webring.html" target="_top">
+<img src="gbcam_files/gbring.html" align="left" height="100" width="100"></a>
+<a href="http://www.webring.com/cgi-bin/webring?ring=gameboydev;id=39;next" target="_top">
+<img src="gbcam_files/gbring.html" align="right" height="100" width="100"></a>
+This <a href="http://www.geneticfantasia.com/html/webring.html" target="_top">GameBoy
+Development Ring</a> site is owned by <br>
+<a href="mailto:corkymork@usa.net"><font size="2">Corky Mork</font></a>.
+<br><br><font size="2">
+Want to join the <a href="http://www.geneticfantasia.com/html/webring.html" target="_top">GameBoy Development Ring</a>?</font>
+</font></th></tr><tr><th><font size="3">
+[<a href="http://www.webring.com/cgi-bin/webring?ring=gameboydev;id=39;sprev" target="_top">Skip Prev</a>]
+[<a href="http://www.webring.com/cgi-bin/webring?ring=gameboydev;id=39;prev" target="_top">Prev</a>]
+[<a href="http://www.webring.com/cgi-bin/webring?ring=gameboydev;id=39;next" target="_top">Next</a>]
+[<a href="http://www.webring.com/cgi-bin/webring?ring=gameboydev;id=39;skip" target="_top">Skip
+Next</a>]
+[<a href="http://www.webring.com/cgi-bin/webring?random;ring=gameboydev" target="_top">Random</a>]
+[<a href="http://www.webring.com/cgi-bin/webring?ring=gameboydev;id=39;next5" target="_top">Next 5</a>]
+[<a href="http://www.webring.com/cgi-bin/webring?ring=gameboydev;list" target="_top">List
+Sites</a>]
+</font></th></tr></tbody></table></p></center>
+
+
+
+
+<script type="text/javascript" src="gbcam_files/navbar.js"></script><!--gameboydev--><!--SSNB--><style type="text/css"> <!-- .st1gameboydev {color: blue;} .st2gameboydev {color: black; text-decoration: none;} --> </style> <table border="1" bordercolor="#990066" cellpadding="2" cellspacing="0" width="300"><tbody><tr><td nowrap="nowrap"> <table bgcolor="#ffcccc" border="0" cellpadding="1" cellspacing="0" width="300"><tbody><tr> <td align="center" nowrap="nowrap" valign="middle" width="1%"><a class="st1gameboydev" href="http://www.webring.com/t/The-GameBoy-Development-Ring?sid=39" target="_top"><img src="gbcam_files/logo3.gif" alt="The GameBoy Development Ring" border="0"></a><font face="arial" size="-2"><br><span class="st2gameboydev">© </span><a href="http://www.webring.com/"><span class="st1gameboydev">WebRing Inc.</span></a></font> </td> <td nowrap="nowrap"><table border="0" cellpadding="0" cellspacing="2" width="100%"><tbody><tr><td nowrap="nowrap"><a href="http://www.webring.com/t/The-GameBoy-Development-Ring?sid=39" target="_top"><span class="st2gameboydev"><b>The GameBoy Development Ring</b></span></a></td> </tr> <tr><td colspan="2" nowrap="nowrap"><span class="st2gameboydev"> <a href="http://www.webring.org/go?ring=gameboydev;sid=39;id=39;prev" target="_top" title="visit previous site in The GameBoy Development Ring"><span class="st1gameboydev">&lt;&lt; Prev</span></a>&lt; | <b><a href="http://www.webring.com/t/The-GameBoy-Development-Ring?sid=39" target="_top"><span class="st1gameboydev" title="visit The GameBoy Development Ring community home">Hub</span></a></b> | <b><a href="http://www.webring.org/hub?ring=gameboydev;sid=39;sid=39" target="_top"><span class="st1gameboydev" title="visit The GameBoy Development Ring member sites">Sites</span></a></b> | <a href="http://d.webring.com/wrman?ring=gameboydev;sid=39;addsite" target="_top" title="join The GameBoy Development Ring communiy"><span class="st1gameboydev">Join</span></a> | <a href="http://www.webring.org/go?ring=gameboydev;sid=39;id=39;prvw" target="_top" title="Rate this site"><span class="st1gameboydev">Rate</span></a> | <a href="http://www.webring.org/go?ring=gameboydev;sid=39;id=39;next" target="_top" title="go to next site in The GameBoy Development Ring"><span class="st1gameboydev">Next &gt;&gt;</span></a> </span></td></tr> <tr><form method="POST" action="http://www.webring.com/cgi-bin/Hubsearch?ringsearch"></form><td colspan="2" nowrap="nowrap"><input name="query" size="18" style="height: 19px;" type="TEXT"><input name="Submit" value="Search" style="height: 19px;" type="SUBMIT"><input name="ring" value="gameboydev" type="hidden"></td></tr> </tbody></table></td> </tr></tbody></table> </td></tr></tbody></table>
+
+<!--google728a-->
+<script type="text/javascript"><!--
+google_ad_client = "pub-0697257997191693";
+google_alternate_ad_url = "http://dir.webring.com/pop/bn";
+google_ad_width = 728;
+google_ad_height = 90;
+google_ad_format = "728x90_as";
+google_ad_channel = "1625894005";
+google_ad_type = "text_image";
+//--></script>
+<script type="text/javascript" src="gbcam_files/show_ads.js">
+</script>
+<script type="text/javascript"> var sc_project=4715727; var sc_invisible=1; var sc_partition=56; var sc_click_stat=1; var sc_security="81275d17"; </script> <script type="text/javascript" src="gbcam_files/counter.js"></script><center>Hosting by <a href="http://webspace.webring.com/h/ppl" target="_top">WebRing</a>.</center>
+</center></body>
+<!-- Mirrored from gbdev.gg8.se/files/docs/mirrors/gbcam.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 09 Jun 2018 22:39:28 GMT -->
+</html>

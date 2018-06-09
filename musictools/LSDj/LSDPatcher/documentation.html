@@ -1,0 +1,71 @@
+<table width=600><tr><td>
+This tool can be used to compile and patch your own sample kits into Little Sound Dj. 
+<p>
+
+<b>Requirements</b>
+<p>
+1) A reasonably new version of <a target=_blank 
+href=http://www.java.com/>Java</a>.
+<br>
+2) The original Little Sound Dj ROM image.
+<br>
+3) (optional) A set of 16-bit .wav files to import.
+<p>
+If you want to transfer the ROM images to cartridge, you will also need a backup system, like the GB Xchanger or GB Transferer.
+<p>
+
+<b>Startup</b>
+<p>
+Double click the .jar file. If this doesn't work, try "java -jar LSDPatcher" on the command line.
+<p>
+
+<b>Patching in ready-made sample kits</b>
+<ol>
+<li>Load the original Little Sound Dj ROM image.
+<li>Select the sample bank you wish to overwrite. This is done by using the combo box in the top left.
+<li>Click "load kit" and select the kit to patch in.
+<li>Press "save rom image" to save the new Little Sound Dj ROM image.
+<li>Use your new ROM image with pleasure.
+</ol>
+
+<b>Version upgrade (Move kits from old ROM)</b>
+<ol>
+<li>Open new version ROM
+<li>Select "Import kits from ROM" in menu
+<li>Select old version ROM (with your custom kits)
+<li>Save ROM & use it
+</ol>
+
+<b>Patching in your own samples</b>
+<p>
+<ol>
+<li>Load the original Little Sound Dj ROM image.
+<li>Select the sample bank you wish to overwrite. This is done by using the combo box in the top left.
+<li>Click "create new kit" to clear the bank.
+<li>Press "add sample" to add a sample. (The program looks for 16-bit .wav files.) 
+<li>When you added all samples needed, click "compile kit".
+<li>Type the name of your new kit into the white textfield left to the "rename kit" button. Then, commit the change by clicking the "rename kit" button.
+<li> Press "save rom image" to save the new Little Sound Dj ROM image.
+<li> Use your new kit with pleasure.
+</ol>
+
+The total sample time for one kit is limited to about 2.8 seconds. When the text in the lower left turns red, the kit is full and you must either drop some sample or cut down the length of the samples you already use.
+<p>
+The dithering slider improves the perceived bit depth by adding noise before compiling the kit. Use it if you feel like it.
+<p>
+<b>On Preparing Samples</b>
+<p>
+<ul>
+<li>The sound amplitudes should be pushed up as much as possible. Normalize and then maybe add +3db gain.
+<li>LSDPatcher has really crappy resampling routines, no antialiasing or interpolation. It may be a good idea to do the conversion from 44100 to 11468 Hz in your normal wave editor.
+</ul>
+<hr>
+<p>
+Open source notice: The Java source code is included in the jar, free to read and modify.
+<p>
+
+Johan Kotlinski<br>
+<a target=_blank href=http://www.littlesounddj.com/>
+http://www.littlesounddj.com
+</a>
+</td></tr></table>

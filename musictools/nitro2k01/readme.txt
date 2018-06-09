@@ -1,0 +1,1 @@
+http://blog.gg8.se/wordpress/2009/03/23/shitwave-a-prng-based-drone-generator-for-gameboy/
